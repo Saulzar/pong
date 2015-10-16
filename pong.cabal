@@ -1,0 +1,30 @@
+name:                pong
+version:             0.1
+synopsis:            A series of examples leading to a simple pong/breakout game
+description:         A series of examples leading to a simple pong/breakout game
+
+homepage:            https://github.com/saulzar/pong
+bug-reports:         https://github.com/saulzar/pong/issues
+license:             BSD3
+license-file:        LICENSE
+
+author:              Oliver Batchelor
+maintainer:          saulzar@gmail.com
+copyright:           2015 Oliver Batchelor
+category:            FRP
+build-type:          Simple
+cabal-version:       >=1.10
+
+
+
+source-repository head
+  type: git
+  location: https://github.com/saulzar/pong.git
+
+executable pong1
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  main-is:             Pong1.hs
+  build-depends:       base, gloss, reflex, reflex-transformers, reflex-gloss-scene,  reflex-animation, transformers, mtl, linear, lens, containers
+  default-extensions:  MultiParamTypeClasses ScopedTypeVariables RankNTypes FlexibleContexts TypeFamilies
+
