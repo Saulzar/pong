@@ -19,26 +19,44 @@ import Control.Applicative hiding (optional)
 
 import Widgets
 
+radius :: Float
+radius = 6
+
+
           
-pong :: Reflex t =>  Vector -> Scene t ()
-pong (width, height) = do
+pong :: Reflex t => Vector -> Scene t ()
+pong (width, height) = mdo
 
-  paddlePos <- fmap fst <$> localMouse
-  render (drawPaddle <$> paddlePos)
+  paddlePos <- fmap fst <$> localMouse  
+  initial <- sample (onPaddle <$> paddlePos)
 
-    where
+  ballVel <- hold (200, 200) never
+  ballPos <- integrate initial ballVel
   
+
+  render $ mconcat 
+    [ drawBall <$> current ballPos
+    , drawPaddle <$> paddlePos
+    ]
+    
+    where
+      
+      onPaddle pos = (pos, bottom + radius)
+     
+      drawBall (x, y) = translate x y $ 
+        color green $ circleSolid radius
+      
       drawPaddle pos = translate pos (bottom - thickness/2) $
         color red $ rectangleSolid 100 thickness
         
-      thickness = 10       
+      thickness = 10
       bottom = -height/2 + 20
-  
+
 
 main = playSceneGraph display background frequency $ 
   pong (fromIntegral width, fromIntegral height)
     where 
-      display = InWindow "Pong1" (width, height) (0, 0)
+      display = InWindow "Pong2" (width, height) (0, 0)
       background = white
       frequency = 30
       width = 600

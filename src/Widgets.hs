@@ -46,6 +46,8 @@ coloredButton col str size = do
   return click
   
 
+  
+  
 button :: Reflex t => Behavior t String -> Behavior t Vector -> Scene t (Event t ())
 button = coloredButton (pure $ light azure)
   

@@ -25,6 +25,26 @@ executable pong1
   hs-source-dirs:      src
   default-language:    Haskell2010
   main-is:             Pong1.hs
-  build-depends:       base, gloss, reflex, reflex-transformers, reflex-gloss-scene,  reflex-animation, transformers, mtl, linear, lens, containers
+  build-depends:       base, gloss, reflex, reflex-transformers, reflex-gloss-scene,  reflex-animation, transformers, mtl, linear, lens, containers, vector-space
   default-extensions:  MultiParamTypeClasses ScopedTypeVariables RankNTypes FlexibleContexts TypeFamilies
 
+executable pong2
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  main-is:             Pong2.hs
+  build-depends:       base, gloss, reflex, reflex-transformers, reflex-gloss-scene,  reflex-animation, transformers, mtl, linear, lens, containers, vector-space
+  default-extensions:  MultiParamTypeClasses ScopedTypeVariables RankNTypes FlexibleContexts TypeFamilies
+  
+executable pong3
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  main-is:             Pong3.hs
+  build-depends:       base, gloss, reflex, reflex-transformers, reflex-gloss-scene,  reflex-animation, transformers, mtl, linear, lens, containers, vector-space
+  default-extensions:  MultiParamTypeClasses ScopedTypeVariables RankNTypes FlexibleContexts TypeFamilies
+
+executable pong4
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  main-is:             Pong4.hs
+  build-depends:       base, gloss, reflex, reflex-transformers, reflex-gloss-scene,  reflex-animation, transformers, mtl, linear, lens, containers, vector-space
+  default-extensions:  MultiParamTypeClasses ScopedTypeVariables RankNTypes FlexibleContexts TypeFamilies
